@@ -19,4 +19,5 @@ public class Stats{
 	public int getInt(){
 		return intellect;
 	}
+	
 }
