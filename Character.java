@@ -49,6 +49,10 @@ public class Character extends Stats implements Serializable{
 		stamina += stam;
 	}
 	
+	public void setInt(int Int){
+		intellect += Int;
+	}
+	
 	//mutators
 	public void setName(String name){
 		this.name = name;
@@ -67,7 +71,7 @@ public class Character extends Stats implements Serializable{
 	//	answer = ("Name: " +getName() + "\nProfession: " + getProf() + "\nRace: " + getRace() + "\nStrength: " + showStr() + 
 	//		      "\nAgility: " + showAgi() + "\nStamina: " + showStam() + "\nIntellect: " + showInt());
 	    
-	    answer = String.format("%5s\n%5s\n%5s\n%02d\n%02d\n%02d\n%02d\n\n", "Name: "+getName(), "Class: "+getProf(), "Race: "+getRace(), showStr(), showAgi(), showStam(), showInt());
+	    answer = String.format("%5s\n%5s\n%5s\n%02d\n%02d\n%02d\n\n", "Name: "+getName(), "Class: "+getProf(), "Race: "+getRace(), showStr(), showStam(), showInt());
 		return answer;
 	}
  
