@@ -160,6 +160,14 @@ public class GameDriver extends JFrame{
     //ALL HANDLERS
     
     //Handler for file menu
+    /*__________________________________________________________________________________________________________________
+    Title:     .java     
+    Author:    John W
+    Date:      
+    Availability:   Labs > John W > OOP2_2014 >   (Accessed:  1 December 2014)
+    Modified:   The following code was refactored and integrated to _________________________________________________________________________________________________________________*/
+    
+    
     public class FileHandler implements ActionListener{
   	public void actionPerformed(ActionEvent e) 
    {
@@ -183,6 +191,10 @@ public class GameDriver extends JFrame{
   		
    }
   }
+  
+  /*________________________________________________________________________________________________
+    *END OF REFRACTORED CODE
+    *_________________________________________________________________________________________________*/
   
   
   //Handler for character menu
@@ -267,6 +279,14 @@ public class GameDriver extends JFrame{
   //THESE METHODS ARE HEAVILY INFLUENCED BY THE SAMPLES DONE IN CLASS
   
   //SAVE CHARACTER
+  
+  /*__________________________________________________________________________________________________________________
+    Title:     .java     
+    Author:    John W
+    Date:      
+    Availability:   Labs > John W > OOP2_2014 >   (Accessed:  1 December 2014)
+    Modified:   The following code was refactored and integrated to _________________________________________________________________________________________________________________*/
+    
   public void saveCharacter()//throws FileNotFoundException,IOException
    {
      try{
@@ -305,6 +325,10 @@ public class GameDriver extends JFrame{
 	       }
    }
    
+   /*________________________________________________________________________________________________
+    *END OF REFRACTORED CODE
+    *_________________________________________________________________________________________________*/
+   
    
    
    //END OF SAVING/LOADING
@@ -328,12 +352,14 @@ public class GameDriver extends JFrame{
 	  player.setProf(JOptionPane.showInputDialog(null,"Please enter your character's profession (Warrior or Mage)"));
 	  player.setRace(JOptionPane.showInputDialog(null,"Please enter your character's race"));
 	  
-	       if(!player.getProf().equalsIgnoreCase("mage") || !player.getProf().equalsIgnoreCase("warrior"))
+	       if(!player.getProf().equalsIgnoreCase("mage") && !player.getProf().equalsIgnoreCase("warrior"))
 	       {
 	       	  JOptionPane.showMessageDialog(null,"Invalid profession you must be either a Warrior or a Mage");
 	      	  player.setProf(JOptionPane.showInputDialog(null,"Please enter your character's profession (Warrior or Mage)"));
 	      	  
-	      	  if(player.getProf().equalsIgnoreCase("warrior"))
+	       } 
+	       
+	       if(player.getProf().equalsIgnoreCase("warrior"))
 	      	  {
 	       	    player.setStr(2);
 	       	    hpLabel.setText("HP: " + player.showStam() * 10);
@@ -351,8 +377,6 @@ public class GameDriver extends JFrame{
 	       	    stamLabel.setText("Stamina: " + player.showStam());
 
 	          }
-
-	       } 
 	        
 	  myCharacters.add(player);
    }
@@ -514,6 +538,8 @@ public class GameDriver extends JFrame{
    	      
    	      	JOptionPane.showMessageDialog(null,"You died! all your xp has been reset but you are free to continue");
    	      	xp = 0;
+   	      	totalHp = 0;
+   	      	hpLabel.setText("HP: " + (totalHp + (hp * 10)));
    	      	xpLabel.setText("XP: " + xp);//reset xp to zero but continue playing
    	      
    }
